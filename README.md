@@ -39,7 +39,7 @@ Iterate! 🔧
 
 This template includes a GitHub Actions workflow setup for automated deployment.
 
-Before setting up the repository, create the AWS Lambda from the AWS console: https://docs.aws.amazon.com/lambda/latest/dg/getting-started.html.
+Before setting up the repository, **create the AWS Lambda from the AWS console**: https://docs.aws.amazon.com/lambda/latest/dg/getting-started.html.
 This will make sure all the roles to execute the function are set up. 
 
 To set up the repository, you need to configure your [AWS account for the Github OIDC provider](https://github.com/aws-actions/configure-aws-credentials/tree/main?tab=readme-ov-file#configuring-iam-to-trust-github).
@@ -103,7 +103,7 @@ And the following permissions:
         "iam:PassRole"
       ],
       "Resource":[
-        "arn:aws:iam::<ACCOUNT_ID>:role/<FUNCTION_EXECUTION_ROLE>"
+        "<FUNCTION_EXECUTION_ROLE_FOUND_IN_LAMBDA_DASHBOARD>"
       ]
     }
   ]
