@@ -12,13 +12,13 @@ Welcome to the **Restate Python + AWS Lambda** template! ✨
 ## 🛠️ Local Development
 
 Sync the dependencies using `uv`:
-```bash
+```shell
 uv sync
 ```
 
 Launch the local Restate server:
 ```shell
-npx @restatedev/restate-server
+restate-server
 ```
 
 Start the local endpoint:
@@ -28,7 +28,7 @@ uv run hypercorn -b :9080 handler:app
 
 Connect your local service to Restate:
 ```shell
-npx @restatedev/restate dep add http://localhost:9080
+restate dep add http://localhost:9080
 ```
 
 Iterate! 🔧
