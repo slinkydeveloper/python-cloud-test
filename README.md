@@ -39,9 +39,7 @@ Iterate! 🔧
 
 This template includes a GitHub Actions workflow setup for automated deployment.
 
-Before setting up the repository, **create the AWS Lambda from the AWS console**: https://docs.aws.amazon.com/lambda/latest/dg/getting-started.html.
-
-Then, you'll need two roles to setup:
+Before setting up the repository, **create the AWS Lambda from the AWS console**: https://docs.aws.amazon.com/lambda/latest/dg/getting-started.html. Then, you'll need two AWS roles to setup:
 
 * The role to **invoke**, to configure in the Github actions secrets as `AWS_INVOKE_ROLE_TO_ASSUME`
 * The role to **deploy**, to configure in the Github actions secrets as `AWS_DEPLOY_ROLE_TO_ASSUME`
