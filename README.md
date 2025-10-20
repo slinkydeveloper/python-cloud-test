@@ -51,7 +51,7 @@ aws iam create-open-id-connect-provider \
     --client-id-list sts.amazonaws.com
 ```
 
-Then create the role to deploy and set the role ARN as secret `AWS_LAMBDA_ROLE_TO_ASSUME`.
+Then create the role to deploy and set the role ARN as secret `AWS_DEPLOY_ROLE_TO_ASSUME`.
 
 The role should have the following Trust policy:
 
@@ -112,7 +112,7 @@ And the following permissions:
 
 For more info, check https://github.com/aws-actions/aws-lambda-deploy?tab=readme-ov-file#credentials-and-region
 
-To perform the Restate registration, you'll need another role, for which you need to configure the arn as secret `AWS_RESTATE_ROLE_TO_ASSUME`.
+To perform the Restate registration, you'll need another role, for which you need to configure the arn as secret `AWS_INVOKE_ROLE_TO_ASSUME`.
 To set up this role, open the Restate Dashboard at Developers > Security > AWS Lambda.
 
 Finally, add the following to **Github Actions repository secrets**:
