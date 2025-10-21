@@ -42,8 +42,7 @@ jobs:
           # Install project and dependencies directly into dist using uv pip
           uv pip install --python ${{ env.PYTHON_VERSION }} --target dist .
           # Copy source code
-          cp -r app dist/
-          cp handler.py dist/
+          cp *.py dist/
 
       - name: Deploy Lambda Function
         uses: aws-actions/aws-lambda-deploy@v1.1.0
