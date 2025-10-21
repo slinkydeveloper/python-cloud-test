@@ -23,12 +23,12 @@ restate-server
 
 Start the local endpoint:
 ```shell
-uv run hypercorn -b :9080 handler:app
+uv run uvicorn --port 9080 handler:app
 ```
 
 Connect your local service to Restate:
 ```shell
-restate dep add http://localhost:9080
+restate dep add http://localhost:9080 --use-http1.1
 ```
 
 Iterate! 🔧

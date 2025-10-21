@@ -18,5 +18,5 @@ build-backend = "hatchling.build"
 
 [dependency-groups]
 dev = [
-    "hypercorn>=0.17.3",
+    "uvicorn>=0.38.0",
 ]
