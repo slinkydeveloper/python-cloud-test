@@ -3,7 +3,7 @@ import restate
 from datetime import timedelta
 from pydantic import BaseModel
 
-from .utils import send_notification, send_reminder
+from utils import send_notification, send_reminder
 
 
 # You can also just use a typed dict, without Pydantic
