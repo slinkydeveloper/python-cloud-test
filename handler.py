@@ -1,5 +1,5 @@
 import restate
 
-from app.greeter import greeter
+from .greeter import greeter
 
 app = restate.app(services=[greeter])
