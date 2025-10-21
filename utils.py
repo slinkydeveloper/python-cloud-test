@@ -15,7 +15,6 @@ def send_notification(greeting_id: str, name: str):
 
 
 def send_reminder(greeting_id: str, name: str):
-    time.sleep(3)
     if random.random() < 0.8 and name == "Alice":  # 80% chance of failure
         print(f"[👻 SIMULATED] Failed to send reminder: {greeting_id}")
         raise Exception(f"[👻 SIMULATED] Failed to send reminder: {greeting_id}")
