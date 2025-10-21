@@ -1,3 +1,4 @@
+import time
 import random
 
 # You can remove this file.
@@ -5,7 +6,7 @@ import random
 
 
 def send_notification(greeting_id: str, name: str):
-    if random.random() < 0.7 and name == "Alice":  # 70% chance of failure
+    if random.random() < 0.8 and name == "Alice":  # 80% chance of failure
         print(f"[👻 SIMULATED] Failed to send notification: {greeting_id} - {name}")
         raise Exception(
             f"[👻 SIMULATED] Failed to send notification: {greeting_id} - {name}"
@@ -14,7 +15,8 @@ def send_notification(greeting_id: str, name: str):
 
 
 def send_reminder(greeting_id: str, name: str):
-    if random.random() < 0.7 and name == "Alice":  # 70% chance of failure
+    time.sleep(3)
+    if random.random() < 0.8 and name == "Alice":  # 80% chance of failure
         print(f"[👻 SIMULATED] Failed to send reminder: {greeting_id}")
         raise Exception(f"[👻 SIMULATED] Failed to send reminder: {greeting_id}")
     print(f"Reminder sent: {greeting_id}")

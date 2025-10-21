@@ -19,7 +19,7 @@ class Greeting(BaseModel):
 greeter = restate.Service("Greeter")
 
 
-@greeter.handler()
+@greeter.handler(inactivity_timeout=timedelta(seconds=1), abort_timeout=timedelta(seconds=1))
 async def greet(ctx: restate.Context, req: GreetingRequest) -> Greeting:
     try:
         # Durably execute a set of steps; resilient against failures
