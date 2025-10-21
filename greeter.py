@@ -1,3 +1,4 @@
+import asyncio
 import restate
 
 from datetime import timedelta
@@ -20,11 +21,16 @@ greeter = restate.Service("Greeter")
 
 @greeter.handler()
 async def greet(ctx: restate.Context, req: GreetingRequest) -> Greeting:
-    # Durably execute a set of steps; resilient against failures
-    greeting_id = str(ctx.uuid())
-    await ctx.run_typed("notification", send_notification, greeting_id=greeting_id, name=req.name)
-    await ctx.sleep(timedelta(seconds=1))
-    await ctx.run_typed("reminder", send_reminder, greeting_id=greeting_id, name=req.name)
+    try:
+        # Durably execute a set of steps; resilient against failures
+        greeting_id = str(ctx.uuid())
+        await ctx.run_typed("notification", send_notification, greeting_id=greeting_id, name=req.name)
+        await ctx.sleep(timedelta(seconds=1))
+        await ctx.run_typed("reminder", send_reminder, greeting_id=greeting_id, name=req.name)
+    except asyncio.CancelledError:
+        # Handle cancellations if needed
+        print("Greeting was cancelled")
+        raise
 
     # Respond to caller
     return Greeting(message=f"You said hi to {req.name}!")
